@@ -1,4 +1,4 @@
-package com.br.tf_listadetarefas_myo.ui.to_buy
+package com.br.tf_listadetarefas_myo.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.br.tf_listadetarefas_myo.databinding.FragmentGalleryBinding
+import com.br.tf_listadetarefas_myo.databinding.FragmentToBuyBinding
+import com.br.tf_listadetarefas_myo.view_model.ToBuyViewModel
 
-class BoughtFragment : Fragment() {
+class ToBuyFragment : Fragment() {
 
-    private var _binding: FragmentGalleryBinding? = null
+    private var _binding: FragmentToBuyBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -23,12 +24,12 @@ class BoughtFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val galleryViewModel =
-            ViewModelProvider(this).get(BoughtViewModel::class.java)
+            ViewModelProvider(this).get(ToBuyViewModel::class.java)
 
-        _binding = FragmentGalleryBinding.inflate(inflater, container, false)
+        _binding = FragmentToBuyBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textGallery
+        val textView: TextView = binding.textToBuy
         galleryViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }

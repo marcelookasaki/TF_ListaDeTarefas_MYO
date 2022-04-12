@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/nav_list"
-        android:name="com.br.tf_listadetarefas_myo.ui.list.ListFragment"
+        android:name="com.br.tf_listadetarefas_myo.view.ListFragment"
         android:label="@string/menu_list"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_list" >
         <action
             android:id="@+id/action_nav_list_to_nav_to_buy"
             app:destination="@id/nav_to_buy" />
@@ -17,9 +17,9 @@
 
     <fragment
         android:id="@+id/nav_to_buy"
-        android:name="com.br.tf_listadetarefas_myo.ui.to_buy.BoughtFragment"
+        android:name="com.br.tf_listadetarefas_myo.view.ToBuyFragment"
         android:label="@string/menu_to_buy"
-        tools:layout="@layout/fragment_gallery" >
+        tools:layout="@layout/fragment_to_buy" >
         <action
             android:id="@+id/action_nav_to_buy_to_nav_bought"
             app:destination="@id/nav_bought" />
@@ -27,7 +27,7 @@
 
     <fragment
         android:id="@+id/nav_bought"
-        android:name="com.br.tf_listadetarefas_myo.ui.bought.BoughtFragment"
+        android:name="com.br.tf_listadetarefas_myo.view.BoughtFragment"
         android:label="@string/menu_bought"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_bought" />
 </navigation>

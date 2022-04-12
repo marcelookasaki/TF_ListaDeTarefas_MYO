@@ -1,13 +1,13 @@
-package com.br.tf_listadetarefas_myo.ui.list
+package com.br.tf_listadetarefas_myo.view_model
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class ListViewModel : ViewModel() {
+class BoughtViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is list Fragment"
+        value = "This is bought Fragment"
     }
     val text: LiveData<String> = _text
 }

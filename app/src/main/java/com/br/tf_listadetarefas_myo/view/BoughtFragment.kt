@@ -1,4 +1,4 @@
-package com.br.tf_listadetarefas_myo.ui.list
+package com.br.tf_listadetarefas_myo.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.br.tf_listadetarefas_myo.databinding.FragmentHomeBinding
+import com.br.tf_listadetarefas_myo.databinding.FragmentBoughtBinding
+import com.br.tf_listadetarefas_myo.view_model.BoughtViewModel
 
-class ListFragment : Fragment() {
+class BoughtFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentBoughtBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,14 +23,14 @@ class ListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(ListViewModel::class.java)
+        val slideshowViewModel =
+            ViewModelProvider(this).get(BoughtViewModel::class.java)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentBoughtBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textBought
+        slideshowViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root
